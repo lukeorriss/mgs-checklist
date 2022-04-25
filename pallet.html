@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forklift Safety Check</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js" integrity="sha512-YcsIPGdhPK4P/uRW6/sruonlYj+Q7UHWeKfTAkBW+g83NKM+jMJFJ4iAPfSnVp7BKD4dKMHmVSvICUbE/V1sSw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <style>
+        * {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.form-container {
+    width: 800px; 
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-weight: normal;
+    
+}
+.header p {
+    margin: 0;
+    color: #99c437;
+    font-size: 15px;
+}
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid rgb(240, 240, 240);
+
+}
+.question p {
+    margin: 0;
+    
+}
+.d1 {
+    width: 200px;
+}
+.d2 {
+    width: 100px;
+}
+.d3 {
+    width: 200px;
+}
+
+h4 {
+    margin-top: 30px;
+    font-size: 18px;
+    color: #99c437;
+}
+.furtherinfo {
+    display: flex;
+    flex-direction: column; 
+}
+.furtherinfo label {
+    margin-top: 10px;
+}
+.endofpage {
+    margin-bottom: 50px;
+}
+
+button {
+    margin-top: 20px;
+    background: #99c437;
+    border: 1px solid #99c437;
+    color: white;
+    padding: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .form-container {
+        width: 97%;
+    }
+}
+    </style>
+
+    <div class="form-container" id="content">
+        <img src="/images/mgsheader.png" alt="">
+        <form action="">
+            <h4>Pallet Truck Pre-Use Checklist</h4>
+            
+            <label for="site" style="margin-top: 20px;">Site:</label>
+            <select name="site" id="site" class="form-select" style="margin-top: 5px;">
+                <option value="">Rougham</option>
+                <!-- <option value="">Coventry</option> -->
+                <!-- <option value="">Cramlington</option> -->
+            </select>
+            
+            <label for="location" style="margin-top: 10px;">Location of Use:</label>
+            <input type="text" name="location" class="form-control" style="margin-top: 5px;">
+            <label for="pallet" style="margin-top: 10px;">Pallet Truck / Serial Number:</label>
+            <input type="text" name="location" class="form-control" style="margin-top: 5px;">
+            
+            <h4>Visual Checks</h4>
+            <div class="question">
+                <p class="d1">Handles</p>
+                <p class="d1">Fixed Securely. No flex or damage</p>
+                <input type="checkbox" name="" id=""class="d2">
+            </div>
+            <div class="question">
+                <p class="d1">Hydraulic Cylinder.</p>
+                <p class="d1">Clean and free from leaks.</p>
+                <input type="checkbox" name="" id=""class="d2">
+            </div>
+            <div class="question">
+                <p class="d1">Wheels</p>
+                <p class="d1">Free from damage. No nicks or cuts. Secured Firmly.</p>
+                <input type="checkbox" name="" id=""class="d2">
+            </div>
+            <div class="question">
+                <p class="d1">Forks</p>
+                <p class="d1">Free from damage. Parallel to eachother. Parallel to ground.</p>
+                <input type="checkbox" name="" id=""class="d2">
+            </div>
+            <div class="question">
+                <p class="d1">Tagged</p>
+                <p class="d1">Not in prohibition or out of service.</p>
+                <input type="checkbox" name="" id=""class="d2">
+            </div>
+
+            
+            <h4>Operational Checks</h4>
+            <div class="question">
+                <p class="d1">Operation</p>
+                <p class="d1"><b>Pump to full height and hold for 10 seconds.</b> Forks should not drop. Check no oil from cylinder.</p>
+                <input type="checkbox" name="" id=""class="d2">
+            </div>
+            <div class="question">
+                <p class="d1">Operation</p>
+                <p class="d1"><b>Release Pressure.</b><br> Forks should drop smoothly. No oil from cylinder. Forms should both be the same height.</p>
+                <input type="checkbox" name="" id=""class="d2">
+            </div>
+            
+
+            <h4>Defect Details</h4>
+            <textarea name="" id="" style="width:100%; height: 100px;"></textarea>
+            <div class="furtherinfo">
+                <label for="printname">Print Name</label>
+                <!-- <input type="text" name="printname" value="Kevin Orriss" readonly> -->
+                <p>Kevin Orriss</p>
+                <label for="signature">Signature</label>
+                <!-- <input type="text" name="signature" value="KO" readonly> -->
+                <p>KO</p>
+                <label for="date">Date Complete</label>
+                <!-- <input type="text" name="date" id="date" readonly> -->
+                <p id="date"></p>
+            </div>
+
+
+        </form>
+        <div id="element"></div>
+        <button id="cmd" class="endofpage" >Submit</button>
+
+    </div>
+
+
+    <script>
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+        today = dd + '/' + mm + '/' + yyyy;
+
+        $('#date').html(today)
+
+        var element = document.getElementById('content');
+        html2pdf().set({
+        pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        });
+        var opt = {
+        margin:       0.1,
+        filename:     today + 'pallet_truck_preuse_checklist.pdf',
+        image:        { type: 'jpeg', quality: 1},
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+        };
+        
+        $('#cmd').click(function() {
+            $('input, textarea').css("border", "none")
+            $('#site').css("border", "none")
+            $('#cmd').css("display", "none")
+            html2pdf(element, opt);
+        })
+    </script>
+</body>
+</html>
